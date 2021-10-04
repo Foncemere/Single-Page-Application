@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap");
+.project-template {
+  display: grid;
+  grid-template-rows: 660px auto;
+}
+.main-container {
+  border-bottom: 1px #fff solid;
+  background: linear-gradient(
+    309.98deg,
+    rgba(118, 118, 118, 0.5) 0.5%,
+    rgba(133, 133, 133, 0) 100%
+  );
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* fixes clipped white effect space on top */
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.project-title {
+  color: white;
+  width: 800px;
+  margin-left: auto;
+}
+.project-title p {
+  font-family: "Roboto", sans-serif;
+  font-size: 132px;
+  line-height: 105px;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.project-title #first {
+  font-weight: 700;
+}
+.project-title #last {
+  font-weight: 100;
+  font-size: 80px;
+}
+
+.bottom-portion {
+  height: 3000px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.image-container {
+  background-size: cover;
+  height: 280px;
+  width: 500px;
+  margin-top: 50px;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: rgb(255, 255, 255) 1px solid;
+}
+
+@media only screen and (max-width: 1100px) {
+  .projects-container {
+    grid-template-columns: auto;
+  }
+}
+
+.image-container.one {
+  background-image: url("../assets/Proj-1.png");
+}
+
+.image-container.two {
+  background-image: url("../assets/Proj-2.png");
+}
+
+.image-container.three {
+  background-image: url("../assets/Proj-3.png");
+}
+
+.image-container .go {
+  transition: 0.5s cubic-bezier(0.3, 0, 0, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background: linear-gradient(
+    287.67deg,
+    rgba(0, 0, 0, 0.69) 0%,
+    rgba(0, 0, 0, 0.349) 100%
+  );
+  z-index: 1;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+.image-container .go-github {
+  transition: 0.5s cubic-bezier(0.3, 0, 0, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background: linear-gradient(
+    107.67deg,
+    rgba(0, 0, 0, 0.69) 0%,
+    rgba(0, 0, 0, 0.349) 100%
+  );
+  z-index: 1;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+}
+
+.image-container:hover {
+  opacity: 1;
+}
+
+.image-container .go:hover {
+  opacity: 1;
+  width: 60%;
+}
+.image-container .go-github:hover {
+  opacity: 1;
+  width: 40%;
+}
+
+.image-container:hover .go.extra {
+  /* z-index: 0;
+  position: absolute;
+  left: 30px; */
+}
+
+.image.one {
+  width: 90%;
+  position: absolute;
+  z-index: 0;
+}
+
+.image.one:hover + .image.one .go-to {
+  display: flex;
+  height: 300px;
+}
