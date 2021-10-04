@@ -22,11 +22,11 @@ export default class extends Abstract {
                     <a href="https://github.com/Foncemere/ClockWebsite"><span class="go-github"><img class="github-image" src="./assets/Github.png"></span></a>
                 </div>
                 <div class="image-container two">
-                <a href="https://github.com/Foncemere/MessagingProject"><span class="go-github"><img class="github-image" src="./assets/Github.png"></span></a>
+                <a href="https://github.com/Foncemere/MessagingProject"><span class="go-github"><img class="github-image" src="./assets/GitHub.png"></span></a>
                 </div>
                 <div class="image-container three">
                     <a href="https://github.com/Foncemere/toDoReact/"><span class="go">Go to site <img src="/assets/arrow_forward_white_24dp.svg"></span></a>
-                    <a href="https://github.com/Foncemere/toDoReact"><span class="go-github"><img class="github-image" src="./assets/Github.png"></span></a>
+                    <a href="https://github.com/Foncemere/toDoReact"><span class="go-github"><img class="github-image" src="./assets/GitHub.png"></span></a>
                 </div>
               </div>
             </div>
