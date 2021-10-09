@@ -8,7 +8,7 @@ export default class extends Abstract {
   }
   async getHTML() {
     return `
-      <h1 class="test"> Hello </h1>
+      
       `;
   }
 }
