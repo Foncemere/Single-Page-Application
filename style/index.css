@@ -48,6 +48,7 @@ body {
   border-bottom: 1px #ffffff solid;
   position: sticky;
   top: 0;
+  left: 0;
   transition: 1s;
   z-index: 3;
 }
@@ -55,7 +56,6 @@ body {
 .top-bar.scrolled {
   background: rgba(26, 26, 26, 0.85);
   transition: 0.8s;
-  left: 0;
 }
 
 .nav__container {
@@ -91,4 +91,20 @@ body {
   align-items: center;
   font-family: "Roboto", sans-serif;
   color: rgba(255, 255, 255, 0.473);
+}
+
+@media only screen and (max-width: 850px) {
+  .left-part {
+    display: none;
+  }
+  .SPA-grid {
+    grid-template-columns: auto;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .nav__container {
+    float: none;
+    width: 100%;
+  }
 }

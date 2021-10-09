@@ -1,5 +1,3 @@
-console.log("JS is loaded!!!!!");
-
 import About from "../views/About.js";
 import Projects from "../views/Projects.js";
 import Home from "../views/Home.js";
@@ -7,6 +5,29 @@ import Home from "../views/Home.js";
 const navigateTo = (url) => {
   history.pushState(null, null, url);
   router();
+};
+
+const elementInView = (el, percentageScroll = 100) => {
+  const elementTop = el.getBoundingClientRect().bottom;
+
+  return (
+    elementTop <=
+    (window.innerHeight || document.documentElement.clientHeight) *
+      (percentageScroll / 100)
+  );
+};
+
+const handleScrollAnimation = () => {
+  if (document.body.contains(document.querySelector(".projects-container"))) {
+    console.log("it is here");
+    const projectItem = document.getElementsByClassName("image-title");
+    console.log(projectItem);
+    for (let i = 0; i < projectItem.length; i++) {
+      if (elementInView(projectItem[i], 100)) {
+        projectItem[i].classList.add("scrolled");
+      }
+    }
+  }
 };
 
 const router = async () => {
@@ -61,6 +82,7 @@ document.addEventListener("scroll", () => {
   } else {
     topBar.classList.remove("scrolled");
   }
+  handleScrollAnimation();
 });
 
 document.addEventListener("mouseover", (e) => {
