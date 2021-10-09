@@ -29,12 +29,35 @@
   line-height: 105px;
   letter-spacing: -0.025em;
   margin: 0;
+  opacity: 0;
+  transition: opacity 500ms;
 }
 .name #first {
   font-weight: 700;
 }
+
+.name #first.loaded {
+  opacity: 1;
+  animation: slide-in-right 0.5s ease-in-out both;
+}
+
 .name #last {
   font-weight: 100;
+}
+.name #last.loaded {
+  opacity: 1;
+  animation: slide-in-right 0.5s ease-in-out both;
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .bottom-portion {

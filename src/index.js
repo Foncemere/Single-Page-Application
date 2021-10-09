@@ -19,15 +19,33 @@ const elementInView = (el, percentageScroll = 100) => {
 
 const handleScrollAnimation = () => {
   if (document.body.contains(document.querySelector(".projects-container"))) {
-    console.log("it is here");
     const projectItem = document.getElementsByClassName("image-title");
-    console.log(projectItem);
     for (let i = 0; i < projectItem.length; i++) {
       if (elementInView(projectItem[i], 100)) {
         projectItem[i].classList.add("scrolled");
       }
     }
   }
+};
+
+const handleTopScroll = () => {
+  const topBar = document.querySelector(".top-bar");
+  if (window.scrollY !== 0) {
+    topBar.classList.add("scrolled");
+  } else {
+    topBar.classList.remove("scrolled");
+  }
+};
+
+const handleTemplateAnimation = () => {
+  // false why
+  const first = document.getElementById("first");
+  const last = document.getElementById("last");
+
+  first.classList.add("loaded");
+  setTimeout(function () {
+    last.classList.add("loaded");
+  }, 1000);
 };
 
 const router = async () => {
@@ -54,34 +72,25 @@ const router = async () => {
       isMatch: true,
     };
   }
-  console.log("T", match.route.view);
   const vieww = new match.route.view();
 
   document.querySelector("#app").innerHTML = await vieww.getHTML();
-
-  console.log(match.route);
+  handleTemplateAnimation();
 };
 
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", (e) => {
-    console.log(e.target.hash);
     if (e.target.matches("[data-link")) {
       e.preventDefault();
       navigateTo(e.target.hash);
-      console.log(e.target.hash);
     }
   });
   router();
 });
 document.addEventListener("scroll", () => {
-  const topBar = document.querySelector(".top-bar");
-  if (window.scrollY !== 0) {
-    topBar.classList.add("scrolled");
-  } else {
-    topBar.classList.remove("scrolled");
-  }
+  handleTopScroll();
   handleScrollAnimation();
 });
 
